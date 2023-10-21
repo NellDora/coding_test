@@ -1,5 +1,7 @@
 package programers_level2;
 
+import java.util.Arrays;
+
 public class LV2CodingTest5 {
     /*
     영어 끝말잇기
@@ -15,20 +17,61 @@ public class LV2CodingTest5 {
      */
     public static void main(String[] args) {
         String[] arr = new String[]{"tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"};
-        Character last = null;
-        int num;
+        int n=3;
+        int result=0;
 
         for(int i=1; i<arr.length; i++){
-            if(last==null){
-                last = arr[i].charAt(arr[i].length()-1);
-            }else{
-               if(arr[i].charAt(0)!=last){
 
-               }
+            for(int j=0; j<i; i++){
+                arr[i].equals(arr[j]);
+
             }
 
+            if(arr[i].equals()){
+                if(i%n==0){
+                    result=n;
+                }else{
+                    result = i%n;
+                }
+            }
+            else if(arr[i].charAt(arr[i].length()) != arr[i-1].charAt(arr[i-1].length())){
+                if(i%n==0){
+                    result=n;
+                }else{
+                    result = i%n;
+                }
 
-       }
+            };
+        }
+
+        System.out.println(result);
+//        Character last = null;
+//
+//
+//
+//        int num;
+//        int pos=0;
+//        for(int i=1; i<arr.length; i++){
+//            //마지막 문자가 없으면 => 첫단어일 경우
+//            if(last==null){
+//
+//                last = arr[i].charAt(arr[i].length()-1);
+//            }else{//마지막 문자가 있을 때
+//                //마지막 문자가 첫문자와 동일하지 않으면
+//               if(arr[i].charAt(0)!=last){
+//                    //탈락자 검거
+//                   if(i%n==0){
+//                       pos=n;
+//                   }else{
+//                       pos=i%n;
+//                   }
+//               }else if(arr[i].charAt(0)==last){
+//
+//               }
+//            }
+//
+//
+//       }
 
     }
 

@@ -18,33 +18,8 @@ public class LV2CodingTest5 {
     public static void main(String[] args) {
         String[] arr = new String[]{"tank", "kick", "know", "wheel", "land", "dream", "mother", "robot", "tank"};
         int n=3;
-        int result=0;
 
-        for(int i=1; i<arr.length; i++){
-
-            for(int j=0; j<i; i++){
-                arr[i].equals(arr[j]);
-
-            }
-
-            if(arr[i].equals()){
-                if(i%n==0){
-                    result=n;
-                }else{
-                    result = i%n;
-                }
-            }
-            else if(arr[i].charAt(arr[i].length()) != arr[i-1].charAt(arr[i-1].length())){
-                if(i%n==0){
-                    result=n;
-                }else{
-                    result = i%n;
-                }
-
-            };
-        }
-
-        System.out.println(result);
+        System.out.println();
 //        Character last = null;
 //
 //
@@ -86,4 +61,42 @@ public class LV2CodingTest5 {
 
 class Solution5{
 
+    public int[] solution(int n, String[] word){
+        int result=0;
+        int seq =0;
+        int[] answer ={};
+
+        for(int i=1; i<word.length; i++) {
+
+            for (int j = 0; j < i; j++) {
+                if (word[i].equals(word[j])) {
+                    if ((i + 1) % n == 0) {
+                        result = n;
+                        seq = i / n + 1;
+                    } else {
+                        result = i % n;
+                        seq = i / n + 1;
+                    }
+                } else if (word[i].charAt(word[i].length() - 1) != word[i - 1].charAt(word[i - 1].length() - 1)) {
+                    if ((i + 1) % n == 0) {
+                        result = n;
+                        seq = i / n + 1;
+                    } else {
+                        result = i % n;
+                        seq = i / n + 1;
+                    }
+
+                } else {
+                    result = 0;
+                    seq = 0;
+                }
+                ;
+
+            }
+
+
+        }
+
+        return answer = new int[]{result,seq};
+    }
 }

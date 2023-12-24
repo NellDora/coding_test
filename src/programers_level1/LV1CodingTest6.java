@@ -25,7 +25,14 @@ class Solution6{
     public long solution(long n) {
         long answer = 0;
         List<Integer> intList =new ArrayList<>();
-
+        String strArr = String.valueOf(n);
+        for(int i=0; i< strArr.length(); i++){
+            intList.add(Character.getNumericValue(strArr.charAt(i)));
+        }
+        Collections.sort(intList,Collections.reverseOrder());
+        strArr="";
+        for(int i : intList)strArr+=String.valueOf(i);
+        answer =Long.parseLong(strArr);
         return answer;
     }
 }

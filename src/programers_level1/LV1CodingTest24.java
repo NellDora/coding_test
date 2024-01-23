@@ -17,7 +17,7 @@ s	return
      */
 }
 
-class Solution25{
+class Solution24{
     public String solution(String s) {
         String answer = "";
         String [] strArr = s.split(" ");
